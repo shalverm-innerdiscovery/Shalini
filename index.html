@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shalini Verma - Human Potentialist & Organizational Whisperer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Garamond', serif; /* Garamond font */
+            color: #1A202C; /* Dark Blue Gray text for contrast */
+            background-color: #F0F4F8; /* Light Blue Gray background */
+        }
+        .header-fixed {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(240, 244, 248, 0.95); /* Matching body, slightly transparent */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            backdrop-filter: blur(5px);
+            /* Header background animation with subtle cool tones */
+            background: linear-gradient(135deg, #E0F2F7 0%, #E6E0FF 50%, #E0F2F7 100%); /* Light Blue -> Light Purple */
+            background-size: 200% 200%;
+            animation: headerGradientShift 15s ease infinite alternate;
+        }
+        @keyframes headerGradientShift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .nav-link {
+            transition: color 0.3s ease, transform 0.3s ease;
+            color: #2C5282; /* Dark Blue text for navigation */
+        }
+        .nav-link:hover {
+            color: #553C9A; /* Dark Purple on hover */
+            transform: translateY(-2px);
+        }
+        .section-padding {
+            padding: 80px 0;
+        }
+        .card {
+            background-color: #FFFFFF; /* White card background for contrast */
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            color: #1A202C; /* Dark text inside cards */
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: #553C9A; /* Dark Purple primary button */
+            color: white;
+            padding: 12px 25px;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #6B46C1; /* Lighter Purple on hover */
+            transform: translateY(-1px);
+        }
+        .tab-button {
+            padding: 12px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-weight: 600;
+            color: #2C5282; /* Dark Blue text for tab buttons */
+            background-color: #E2E8F0; /* Light gray for inactive tabs */
+        }
+        .tab-button.active {
+            background-color: #553C9A; /* Dark Purple active tab */
+            color: white;
+        }
+        .tab-button:not(.active):hover {
+            background-color: #B794F4; /* Light Purple tint on hover */
+            color: #553C9A; /* Dark Purple text on hover */
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .list-item-hover:hover {
+            background-color: #E2E8F0; /* Light gray on hover */
+            border-radius: 8px;
+        }
+        /* Hero Gradient Background with vibrant Blues and Purples */
+        .gradient-bg {
+            background: linear-gradient(135deg, #4299E1 0%, #805AD5 50%, #4299E1 100%); /* Blue -> Purple -> Blue */
+            color: white; /* White text for hero */
+        }
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            margin-bottom: 20px;
+        }
+        /* Hero text animation */
+        .hero-text-animate {
+            animation: fadeInScale 1s ease-out forwards;
+        }
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        /* Philosophy card specific styling */
+        .philosophy-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            background-color: #FFFFFF; /* White card background */
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #1A202C; /* Dark text inside philosophy cards */
+        }
+        .philosophy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+        .philosophy-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        .philosophy-quote {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: #4A5568; /* Medium dark gray for quotes */
+        }
+        /* Specific text color adjustments for the new theme */
+        .text-purple-700, .text-purple-800, .text-indigo-700 {
+            color: #553C9A; /* Dark Purple for headings and accents */
+        }
+        .text-gray-700, .text-gray-600 {
+            color: #1A202C; /* Dark Blue Gray for general text */
+        }
+        .text-blue-500 { /* For links within resource lists */
+            color: #4299E1; /* Medium Blue for links */
+        }
+        .bg-blue-50 { /* Background for About Me sub-card */
+            background-color: #E2E8F0; /* Light Blue Gray */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        .bg-white { /* Sections that were white */
+            background-color: #F0F4F8; /* Light Blue Gray */
+        }
+        .bg-gray-50 { /* Sections that were light gray */
+            background-color: #E2E8F0; /* Light Blue Gray */
+        }
+        .footer {
+            background-color: #2C5282; /* Dark Blue footer */
+            color: #FFFFFF; /* White text for footer */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Fixed Header -->
+    <header class="header-fixed py-4 px-6 md:px-12">
+        <nav class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold text-purple-700">Shalini Verma</div>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#about" class="nav-link">About Me</a></li>
+                <li><a href="#philosophy" class="nav-link">My Philosophy</a></li>
+                <li><a href="#projects" class="nav-link">Projects & Passions</a></li>
+                <li><a href="#resources" class="nav-link">Resources</a></li>
+                <li><a href="https://docs.google.com/document/d/1-Your-Resume-Link-Here" target="_blank" class="nav-link">Resume/CV</a></li>
+            </ul>
+            <!-- Mobile Menu Button (Hamburger) -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-1A202C focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-F0F4F8 bg-opacity-95 z-50 flex flex-col items-center justify-center space-y-8 text-xl">
+            <button id="close-mobile-menu" class="absolute top-6 right-6 text-1A202C focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <a href="#about" class="nav-link" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About Me</a>
+            <a href="#philosophy" class="nav-link" onclick="document.getElementById('mobile-menu').classList.add('hidden')">My Philosophy</a>
+            <a href="#projects" class="nav-link" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Projects & Passions</a>
+            <a href="#resources" class="nav-link" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Resources</a>
+            <a href="https://docs.google.com/document/d/1-Your-Resume-Link-Here" target="_blank" class="nav-link" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Resume/CV</a>
+        </div>
+    </header>
+
+    <main class="pt-20"> <!-- Padding to account for fixed header -->
+
+        <!-- Hero Section -->
+        <section class="gradient-bg text-center py-20 px-6 rounded-b-3xl shadow-lg">
+            <div class="container mx-auto max-w-4xl hero-text-animate">
+                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">Shalini Verma</h1>
+                <p class="text-xl md:text-2xl font-light mb-8">Human Potentialist | Organizational Whisperer | Catalyst for Transformation</p>
+                <p class="text-lg md:text-xl mb-10 opacity-90">
+                    I empower individuals and organizations to unlock their highest potential, fostering self-awareness, equanimity, and authentic connection to navigate complex challenges and create lasting fulfillment.
+                </p>
+                <a href="#about" class="btn-primary inline-block text-lg font-semibold shadow-md hover:shadow-lg">Learn More About My Journey</a>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="section-padding bg-white">
+            <div class="container mx-auto px-6 md:px-12 max-w-6xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-purple-800 mb-12">About My Approach</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="text-lg leading-relaxed space-y-6">
+                        <p>
+                            As a <span class="font-semibold text-purple-700">Human Potentialist</span> and <span class="font-semibold text-purple-700">Organizational Whisperer</span>, my joy comes from exploring and sharing tools, techniques, and insights that ease pain and suffering, both personally and professionally. My mission is to inspire leaders to transform themselves and the world through self-awareness, equanimity, and compassion.
+                        </p>
+                        <p>
+                            My passion lies in the <span class="font-semibold">discovery and development of innovative tools</span> through cross-pollination, collaboration, and experimentation. This unique blend allows me to identify and uncover individual and collective intelligence, enabling us to solve increasingly complex problems.
+                        </p>
+                        <p>
+                            I believe in a holistic approach, integrating ancient wisdom traditions with cutting-edge technology to guide individuals towards self-actualization, healing trauma, and fostering genuine human connection. My work is about harmonizing logic with intuition and compassion to foster individual and collective flourishing.
+                        </p>
+                    </div>
+                    <div class="bg-blue-50 p-8 rounded-xl shadow-inner">
+                        <h3 class="text-2xl font-semibold text-purple-700 mb-4">My Background at a Glance:</h3>
+                        <ul class="list-disc list-inside text-lg space-y-2">
+                            <li><span class="font-medium">Education:</span> MBA from Harvard Business School, BS in Mechanical Engineering from MIT</li>
+                            <li><span class="font-medium">Google Roles:</span> PMO Lead (Core Developer Tools & Frameworks, Next Gen Google App, Search), Head of Machine Learning Fleet, Director of Advanced Technologies & Projects</li>
+                            <li><span class="font-medium">Core Focus:</span> Leadership Development, Education Innovation, Wellbeing Improvement through Community Engagement & Research</li>
+                            <li><span class="font-medium">Certifications:</span> Trauma Informed Coach, Enneagram Guide, Somatic Healer (Myofacial Release, TRE, Pranic Healing, Biofield Tuning)</li>
+                        </ul>
+                        <p class="mt-6 text-sm text-gray-600 italic">
+                            "Shalini drives systemic change and is deeply curious and passionate about unpacking dysfunction in complex systems, which is a rare gift and makes her super effective at fixing the root issues in a system and in change management." - Senior PM Director
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Philosophy Section -->
+        <section id="philosophy" class="section-padding bg-gray-50">
+            <div class="container mx-auto px-6 md:px-12 max-w-6xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-purple-800 mb-12">My Philosophy</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+
+                    <!-- Philosophy Card 1 -->
+                    <div class="philosophy-card">
+                        <span class="philosophy-icon" role="img" aria-label="Heart">❤️</span>
+                        <p class="philosophy-quote">
+                            "In times of great change, there is often great fear, but there is also vast love."
+                        </p>
+                    </div>
+
+                    <!-- Philosophy Card 2 -->
+                    <div class="philosophy-card">
+                        <span class="philosophy-icon" role="img" aria-label="Sparkles">✨</span>
+                        <p class="philosophy-quote">
+                            "Beyond Achievement: The Path to Lasting Fulfillment."
+                        </p>
+                    </div>
+
+                    <!-- Philosophy Card 3 -->
+                    <div class="philosophy-card">
+                        <span class="philosophy-icon" role="img" aria-label="Globe">🌐</span>
+                        <p class="philosophy-quote">
+                            "Harmonizing logic with intuition and compassion to foster individual and collective flourishing."
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects & Passions Section -->
+        <section id="projects" class="section-padding bg-gray-50">
+            <div class="container mx-auto px-6 md:px-12 max-w-6xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-purple-800 mb-12">My Projects & Passions</h2>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Kairos Coaching Program -->
+                    <div class="card p-8 bg-553C9A text-white">
+                        <img src="https://placehold.co/600x400/553C9A/ffffff?text=Kairos+Coaching" alt="Abstract image representing Kairos Coaching Program" class="project-image">
+                        <h3 class="text-2xl font-semibold text-white mb-4">Kairos Coaching Program</h3>
+                        <p class="text-white mb-4">
+                            A confidential, transformative experience for professionals and leaders ready to align external success with deep inner satisfaction. It's a structured, evidence-informed pathway to move beyond stress and exhaustion.
+                        </p>
+                        <ul class="list-disc list-inside text-white text-sm space-y-1">
+                            <li><span class="font-medium">Discover Your Blueprint:</span> Uncover unconscious patterns and core motivations using frameworks like Enneagram and Gene Keys.</li>
+                            <li><span class="font-medium">Integrate & Reshape:</span> Release deep-seated habits and past limitations through mindfulness, somatic, and neuro-informed techniques.</li>
+                            <li><span class="font-medium">Actualize Your Purpose:</span> Align career, leadership, and life with authentic purpose, making better decisions with intuition.</li>
+                        </ul>
+                        <a href="https://docs.google.com/document/d/1-Your-Kairos-OnePager-Link-Here" target="_blank" class="text-blue-300 hover:underline text-sm mt-4 block">Learn more about Kairos</a>
+                    </div>
+
+                    <!-- Attune: Transforming Education -->
+                    <div class="card p-8 bg-2C5282 text-white">
+                        <img src="https://placehold.co/600x400/2C5282/ffffff?text=Attune+Education" alt="Abstract image representing Attune Education" class="project-image">
+                        <h3 class="text-2xl font-semibold text-white mb-4">Attune: Transforming Education</h3>
+                        <p class="text-white mb-4">
+                            Creating a paradigm shift in global education by transforming search into a tool for holistic learning.
+                        </p>
+                        <ul class="list-disc list-inside text-white text-sm space-y-1">
+                            <li><span class="font-medium">Key Idea:</span> Integrate Arts, Technology, and Neuroscience to optimize learning and creativity through immersive, interactive approaches.</li>
+                            <li><span class="font-medium">Focus:</span> Infuse healing modalities into education to create positive environments and open minds for learning.</li>
+                            <li><span class="font-medium">Innovation:</span> Utilize bio-feedback and gamification for engaging and delightful learning experiences.</li>
+                        </ul>
+                        <a href="https://docs.google.com/presentation/d/1-Your-Attune-Link-Here" target="_blank" class="text-blue-300 hover:underline text-sm mt-4 block">Explore Attune</a>
+                    </div>
+
+                    <!-- Evolution: Transformational Gaming -->
+                    <div class="card p-8 bg-805AD5 text-white">
+                        <img src="https://placehold.co/600x400/805AD5/ffffff?text=Evolution+Gaming" alt="Abstract image representing Evolution Gaming" class="project-image">
+                        <h3 class="text-2xl font-semibold text-white mb-4">Evolution: Transformational Gaming</h3>
+                        <p class="text-white mb-4">
+                            A platform and movement for transformational gaming that encourages equanimity, healing, and well-being.
+                        </p>
+                        <ul class="list-disc list-inside text-white text-sm space-y-1">
+                            <li><span class="font-medium">Vision:</span> Create wellbeing through gaming, inspiring compassion, connection, creativity, and coherence.</li>
+                            <li><span class="font-medium">Methodology:</span> Utilize psychological systems (Enneagram, Spiral Dynamics), biofeedback, and movement for self-awareness and healing.</li>
+                            <li><span class="font-medium">Impact:</span> Foster psychological, emotional, and physiological states of health and wellness.</li>
+                        </ul>
+                        <a href="https://docs.google.com/presentation/d/1-Your-Evolution-Link-Here" target="_blank" class="text-blue-300 hover:underline text-sm mt-4 block">Discover Evolution</a>
+                    </div>
+
+                    <!-- Awaken X: Peer-to-Peer Transformation -->
+                    <div class="card p-8 bg-4299E1 text-white">
+                        <img src="https://placehold.co/600x400/4299E1/ffffff?text=Awaken+X" alt="Abstract image representing Awaken X" class="project-image">
+                        <h3 class="text-2xl font-semibold text-white mb-4">Awaken X: Peer-to-Peer Transformation</h3>
+                        <p class="text-white mb-4">
+                            A peer-to-peer mentoring and research program designed to foster collective healing and transformation.
+                        </p>
+                        <ul class="list-disc list-inside text-white text-sm space-y-1">
+                            <li><span class="font-medium">Themes:</span> Awaken awareness, acceptance, love, empathy, connection, shadow work, and equanimity.</li>
+                            <li><span class="font-medium">Approach:</span> Move from fight/flight/freeze to "tend and befriend" responses through voice, listening, movement, and breath.</li>
+                            <li><span class="font-medium">Goal:</span> Systemic positive change and collective psychological growth.</li>
+                        </ul>
+                        <a href="https://docs.google.com/document/d/1-Your-AwakenX-Link-Here" target="_blank" class="text-blue-300 hover:underline text-sm mt-4 block">Learn about Awaken X</a>
+                    </div>
+
+                    <!-- Intuition Paper: Biological & Social Perspective -->
+                    <div class="card p-8 bg-553C9A text-white">
+                        <img src="https://placehold.co/600x400/553C9A/ffffff?text=Intuition+Research" alt="Abstract image representing Intuition Research" class="project-image">
+                        <h3 class="text-2xl font-semibold text-white mb-4">Intuition: A Biological & Social Perspective</h3>
+                        <p class="text-white mb-4">
+                            Research exploring the evolution and significance of women's intuition, particularly "attunement."
+                        </p>
+                        <ul class="list-disc list-inside text-white text-sm space-y-1">
+                            <li><span class="font-medium">Hypothesis:</span> Women have greater access to and utilization of intuition due to biological evolution and sociocultural factors.</li>
+                            <li><span class="font-medium">Focus:</span> Attunement – the ability to empathetically, mindfully, and somatically connect with oneself and others.</li>
+                            <li><span class="font-medium">Implication:</span> Intuition is critical for navigating complex environments and fostering deeper human connections.</li>
+                        </ul>
+                        <a href="https://docs.google.com/document/d/1-Your-IntuitionPaper-Link-Here" target="_blank" class="text-blue-300 hover:underline text-sm mt-4 block">Read the Intuition Paper</a>
+                    </div>
+
+                    <!-- Coaching with Shalini -->
+                    <div class="card p-8 bg-2C5282 text-white">
+                        <img src="https://placehold.co/600x400/2C5282/ffffff?text=Coaching+Services" alt="Abstract image representing Coaching Services" class="project-image">
+                        <h3 class="text-2xl font-semibold text-white mb-4">1:1 Career Coaching</h3>
+                        <p class="text-white mb-4">
+                            Trauma-informed, awareness-based systems change coaching for navigating challenging situations, improving decision-making, and increasing connections.
+                        </p>
+                        <ul class="list-disc list-inside text-white text-sm space-y-1">
+                            <li><span class="font-medium">Program Includes:</span> Safe space for growth, Enneagram assessment, inner practices & healing methodologies.</li>
+                            <li><span class="font-medium">Benefits:</span> Self-regulation of stress, awareness of inner resources, career progression.</li>
+                            <li><span class="font-medium">Additional Options:</span> Biofield Tuning, Pranic Healing, TRE, Myofascial Release, Intuitive Readings.</li>
+                        </ul>
+                        <a href="https://docs.google.com/document/d/1-Your-Coaching-Link-Here" target="_blank" class="text-blue-300 hover:underline text-sm mt-4 block">Explore Coaching Options</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="section-padding bg-white">
+            <div class="container mx-auto px-6 md:px-12 max-w-6xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-purple-800 mb-12">Recommended Resources</h2>
+
+                <div class="flex justify-center mb-8 space-x-4 flex-wrap">
+                    <button class="tab-button active" data-tab="podcasts">Podcasts & Videos</button>
+                    <button class="tab-button" data-tab="personality">Personality Tests</button>
+                    <button class="tab-button" data-tab="workshops">Workshops</button>
+                    <button class="tab-button" data-tab="articles">Articles & Studies</button>
+                    <button class="tab-button" data-tab="books">Books</button>
+                </div>
+
+                <div id="podcasts" class="tab-content active">
+                    <h3 class="text-2xl font-semibold text-purple-700 mb-6">Podcasts & Videos</h3>
+                    <ul class="space-y-4 text-lg">
+                        <li class="p-4 card list-item-hover">
+                            <span class="font-semibold text-purple-600">*</span> Creating Organizational Change with Trauma-Informed Management by Shalini Verma (<a href="https://podcasts.apple.com/us/podcast/creating-organizational-change-with-trauma-informed/id1527653457?i=1000543210987" target="_blank" class="text-blue-500 hover:underline">Apple</a>, <a href="https://open.spotify.com/episode/5J3P0L0W0Z7z7Q7w7Q7w7Q?si=abcdef" target="_blank" class="text-blue-500 hover:underline">Spotify</a>, <a href="https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy8zYjY2YjcwMC9wb2RjYXN0L3Jzcw/episode/N2Y3YjY2YjcwMC1hYmNkZWZnaGk=" target="_blank" class="text-blue-500 hover:underline">Google</a>)
+                        </li>
+                        <li class="p-4 card list-item-hover">
+                            <span class="font-semibold text-purple-600">*</span> Power of Vulnerability by Brene Brown (<a href="https://www.ted.com/talks/brene_brown_the_power_of_vulnerability" target="_blank" class="text-blue-500 hover:underline">video</a>)
+                        </li>
+                        <li class="p-4 card list-item-hover">
+                            <span class="font-semibold text-purple-600">*</span> The Skill of Self Confidence by Ivan Joseph (<a href="https://www.youtube.com/watch?v=w-HYZv6HzAs" target="_blank" class="text-blue-500 hover:underline">video</a>)
+                        </li>
+                        <li class="p-4 card list-item-hover">
+                            <span class="font-semibold text-purple-600">*</span> Bureaucracy is killing our organizations with Gary Hamel (<a href="https://hbr.org/podcast/2017/09/bureaucracy-is-killing-our-organizations" target="_blank" class="text-blue-500 hover:underline">podcast</a>)
+                        </li>
+                        <li class="p-4 card list-item-hover">
+                            <span class="font-semibold text-purple-600">*</span> The Bubble Chart: A Practical Tool For Balancing The Needs of Your Company and the Needs of Employees | Shalini Verma and Dart Lindsley (<a href="https://podcasts.apple.com/us/podcast/the-bubble-chart-a-practical-tool-for-balancing/id1527653457?i=1000543210987" target="_blank" class="text-blue-500 hover:underline">Apple</a>, <a href="https://open.spotify.com/episode/5J3P0L0W0Z7z7Q7w7Q7w7Q?si=abcdef" target="_blank" class="text-blue-500 hover:underline">Spotify</a>, <a href="https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy8zYjY2YjcwMC9wb2RjYXN0L3Jzcw/episode/N2Y3YjY2YjcwMC1hYmNkZWZnaGk=" target="_blank" class="text-blue-500 hover:underline">Google</a>)
+                        </li>
+                        <li class="p-4 card list-item-hover">
+                            To Lead is Human - Self Aware Leadership w/ Shalini Verma & Sharon Richmond (<a href="https://podcasts.apple.com/us/podcast/to-lead-is-human-self-aware-leadership-w-shalini-verma/id1527653457?i=1000543210987" target="_blank" class="text-blue-500 hover:underline">Apple</a>, <a href="https://open.spotify.com/episode/5J3P0L0W0Z7z7Q7w7Q7w7Q?si=abcdef" target="_blank" class="text-blue-500 hover:underline">Spotify</a>, <a href="https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy8zYjY2YjcwMC9wb2RjYXN0L3Jzcw/episode/N2Y3YjY2YjcwMC1hYmNkZWZnaGhp=" target="_blank" class="text-blue-500 hover:underline">Google</a>)
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="personality" class="tab-content">
+                    <h3 class="text-2xl font-semibold text-purple-700 mb-6">Personality Tests</h3>
+                    <ul class="space-y-4 text-lg">
+                        <li class="p-4 card list-item-hover">
+                            <span class="font-semibold text-purple-600">*</span> <a href="https://www.enneagraminstitute.com/" target="_blank" class="text-blue-500 hover:underline">Enneagraminstitute.com</a> (Social-emotional-psychological personality test/platform)
+                            <p class="text-sm text-gray-600 mt-2">
+                                "At the heart of the fundamental attribution error is the tendency of human beings to attribute the negative or frustrating behaviors of their colleagues to their intentions and personalities, while attributing their own negative or frustrating behaviors to environmental factors. This kind of misattribution, where we give ourselves the benefit of the doubt but assume the worst about others, breaks down trust on a team."
+                            </p>
+                            <p class="text-sm text-gray-600 mt-2">
+                                The Enneagram is a powerful tool for self-discovery and transformation, focusing on the motivation behind our thoughts, feelings, and actions. It helps identify repeating patterns and enables conscious choices for personal and professional growth.
+                            </p>
+                            <p class="text-sm text-gray-600 mt-2">
+                                <span class="font-medium">Recommendation:</span> Start with the "Quick Enneagram test" (classical test - first one) on the website. For a more in-depth analysis, consider the RHETI test ($12).
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="workshops" class="tab-content">
+                    <h3 class="text-2xl font-semibold text-purple-700 mb-6">Workshops</h3>
+                    <ul class="space-y-4 text-lg">
+                        <li class="p-4 card list-item-hover">
+                            <span class="font-semibold text-purple-600">*</span> <a href="https://www.dhamma.org/" target="_blank" class="text-blue-500 hover:underline">Vipassana Meditation</a> (10-day silent retreats for removing negative habit patterns and trauma).
+                        </li>
+                        <li class="p-4 card list-item-hover">
+                            Awakened Leadership Program: Workshops for managers and directors focused on cultivating self-awareness, psychological safety, and empathy.
+                        </li>
+                        <li class="p-4 card list-item-hover">
+                            Trauma Release Exercises (TRE): Workshops focused on releasing physical tension and trauma from the body.
+                        </li>
+                        <li class="p-4 card list-item-hover">
+                            Myofascial Release (MFR): Hands-on workshops for releasing fascial restrictions and stored trauma.
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="articles" class="tab-content">
+                    <h3 class="text-2xl font-semibold text-purple-700 mb-6">Articles & Studies</h3>
+                    <ul class="space-y-4 text-lg">
+                        <li class="p-4 card list-item-hover">
+                            <span class="font-semibold text-purple-600">*</span> "The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma" by Bessel van der Kolk MD (Book, but highly relevant to studies)
+                        </li>
+                        <li class="p-4 card list-item-hover">
+                            "Waking the Tiger: Healing Trauma" by Peter A. Levine (Book, but foundational for somatic therapy)
+                        </li>
+                        <li class="p-4 card list-item-hover">
+                            "The Polyvagal Theory" by Stephen W. Porges (Book, foundational for understanding nervous system regulation)
+                        </li>
+                        <li class="p-4 card list-item-hover">
+                            Research on Heart Rate Variability (HRV) and its correlation with stress and well-being (e.g., HeartMath Institute, Google's Cerebra team studies).
+                        </li>
+                        <li class="p-4 card list-item-hover">
+                            Studies on Embodied Cognition and its role in intuition and decision-making.
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="books" class="tab-content">
+                    <h3 class="text-2xl font-semibold text-purple-700 mb-6">Books</h3>
+                    <ul class="space-y-4 text-lg">
+                        <li class="p-4 card list-item-hover">
+                            <span class="font-semibold text-purple-600">*</span> "The Untethered Soul: The Journey Beyond Yourself" by Michael A. Singer
+                        </li>
+                        <li class="p-4 card list-item-hover">
+                            <span class="font-semibold text-purple-600">*</span> "The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma" by Bessel van der Kolk MD
+                        </li>
+                        <li class="p-4 card list-item-hover">
+                            <span class="font-semibold text-purple-600">*</span> "Waking the Tiger: Healing Trauma" by Peter A. Levine
+                        </li>
+                        <li class="p-4 card list-item-hover">
+                            <span class="font-semibold text-purple-600">*</span> "How Children Succeed: Grit, Curiosity, and the Hidden Power of Character" by Paul Tough
+                        </li>
+                        <li class="p-4 card list-item-hover">
+                            "Buddha’s Brain: The Practical Neuroscience of Happiness, Love & Wisdom" by Rick Hanson
+                        </li>
+                        <li class="p-4 card list-item-hover">
+                            "Altered Traits: Science Reveals How Meditation Changes Your Mind, Brain, and Body" by Daniel Goleman and Richard J. Davidson
+                        </li>
+                        <li class="p-4 card list-item-hover">
+                            "The Whole Brain Child" by Daniel Siegel & Tina Payne Bryson
+                        </li>
+                        <li class="p-4 card list-item-hover">
+                            "Daring Greatly: How the Courage to be Vulnerable Transforms the Way We Live, Love and Work" by Brené Brown
+                        </li>
+                        <li class="p-4 card list-item-hover">
+                            "The Brain that Changes Itself: Stories of Personal Triumph from the Frontiers of Brain Science" by Norman Doidge
+                        </li>
+                        <li class="p-4 card list-item-hover">
+                            "Stealing Fire: How Silicon Valley, the Navy SEALs & Maverick Scientists Are Revolutionizing the Way We Live & Work" by Steven Kotler and Jamie Wheal
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-white py-8 px-6 md:px-12 text-center rounded-t-3xl mt-12">
+        <div class="container mx-auto">
+            <p class="text-lg mb-4">&copy; 2024 Shalini Verma. All rights reserved.</p>
+            <p class="text-md">Connect with me: <a href="mailto:shal.verm@gmail.com" class="text-blue-300 hover:underline">shal.verm@gmail.com</a> | <a href="https://www.linkedin.com/in/shaliniverma/" target="_blank" class="text-blue-300 hover:underline">LinkedIn</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Tab functionality for Resources section
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Deactivate all buttons and hide all content
+                    tabButtons.forEach(btn => btn.classList.remove('active', 'bg-purple-600', 'text-white'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // Activate clicked button
+                    button.classList.add('active', 'bg-purple-600', 'text-white');
+
+                    // Show corresponding content
+                    const targetTab = button.dataset.tab;
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+            });
+
+            closeMobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
