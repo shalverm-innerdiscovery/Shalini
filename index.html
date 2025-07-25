@@ -47,7 +47,7 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
-            color: #1A202C; /* Dark text inside cards */
+            color: #1A202C; /* Dark text inside cards by default */
         }
         .card:hover {
             transform: translateY(-5px);
@@ -155,6 +155,17 @@
         .text-blue-500 { /* For links within resource lists */
             color: #4299E1; /* Medium Blue for links */
         }
+        /* Project card text colors - now dark on lighter backgrounds */
+        .project-card-text { /* New class for project card text */
+            color: #1A202C; /* Dark Blue Gray */
+        }
+        .project-card-link { /* New class for project card links */
+            color: #2C5282; /* Dark Blue */
+        }
+        .project-card-link:hover {
+            color: #553C9A; /* Dark Purple on hover */
+        }
+
         .bg-blue-50 { /* Background for About Me sub-card */
             background-color: #E2E8F0; /* Light Blue Gray */
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -296,93 +307,93 @@
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                     <!-- Kairos Coaching Program -->
-                    <div class="card p-8 bg-553C9A text-white">
-                        <img src="https://placehold.co/600x400/553C9A/ffffff?text=Kairos+Coaching" alt="Abstract image representing Kairos Coaching Program" class="project-image">
-                        <h3 class="text-2xl font-semibold text-white mb-4">Kairos Coaching Program</h3>
-                        <p class="text-white mb-4">
+                    <div class="card p-8 bg-F3E8FF">
+                        <img src="https://placehold.co/600x400/F3E8FF/1A202C?text=Kairos+Coaching" alt="Abstract image representing Kairos Coaching Program" class="project-image">
+                        <h3 class="text-2xl font-semibold text-purple-700 mb-4">Kairos Coaching Program</h3>
+                        <p class="project-card-text mb-4">
                             A confidential, transformative experience for professionals and leaders ready to align external success with deep inner satisfaction. It's a structured, evidence-informed pathway to move beyond stress and exhaustion.
                         </p>
-                        <ul class="list-disc list-inside text-white text-sm space-y-1">
+                        <ul class="list-disc list-inside project-card-text text-sm space-y-1">
                             <li><span class="font-medium">Discover Your Blueprint:</span> Uncover unconscious patterns and core motivations using frameworks like Enneagram and Gene Keys.</li>
                             <li><span class="font-medium">Integrate & Reshape:</span> Release deep-seated habits and past limitations through mindfulness, somatic, and neuro-informed techniques.</li>
                             <li><span class="font-medium">Actualize Your Purpose:</span> Align career, leadership, and life with authentic purpose, making better decisions with intuition.</li>
                         </ul>
-                        <a href="https://docs.google.com/document/d/1-Your-Kairos-OnePager-Link-Here" target="_blank" class="text-blue-300 hover:underline text-sm mt-4 block">Learn more about Kairos</a>
+                        <a href="https://docs.google.com/document/d/1-Your-Kairos-OnePager-Link-Here" target="_blank" class="project-card-link hover:underline text-sm mt-4 block">Learn more about Kairos</a>
                     </div>
 
                     <!-- Attune: Transforming Education -->
-                    <div class="card p-8 bg-2C5282 text-white">
-                        <img src="https://placehold.co/600x400/2C5282/ffffff?text=Attune+Education" alt="Abstract image representing Attune Education" class="project-image">
-                        <h3 class="text-2xl font-semibold text-white mb-4">Attune: Transforming Education</h3>
-                        <p class="text-white mb-4">
+                    <div class="card p-8 bg-E0F2F7">
+                        <img src="https://placehold.co/600x400/E0F2F7/1A202C?text=Attune+Education" alt="Abstract image representing Attune Education" class="project-image">
+                        <h3 class="text-2xl font-semibold text-purple-700 mb-4">Attune: Transforming Education</h3>
+                        <p class="project-card-text mb-4">
                             Creating a paradigm shift in global education by transforming search into a tool for holistic learning.
                         </p>
-                        <ul class="list-disc list-inside text-white text-sm space-y-1">
+                        <ul class="list-disc list-inside project-card-text text-sm space-y-1">
                             <li><span class="font-medium">Key Idea:</span> Integrate Arts, Technology, and Neuroscience to optimize learning and creativity through immersive, interactive approaches.</li>
                             <li><span class="font-medium">Focus:</span> Infuse healing modalities into education to create positive environments and open minds for learning.</li>
                             <li><span class="font-medium">Innovation:</span> Utilize bio-feedback and gamification for engaging and delightful learning experiences.</li>
                         </ul>
-                        <a href="https://docs.google.com/presentation/d/1-Your-Attune-Link-Here" target="_blank" class="text-blue-300 hover:underline text-sm mt-4 block">Explore Attune</a>
+                        <a href="https://docs.google.com/presentation/d/1-Your-Attune-Link-Here" target="_blank" class="project-card-link hover:underline text-sm mt-4 block">Explore Attune</a>
                     </div>
 
                     <!-- Evolution: Transformational Gaming -->
-                    <div class="card p-8 bg-805AD5 text-white">
-                        <img src="https://placehold.co/600x400/805AD5/ffffff?text=Evolution+Gaming" alt="Abstract image representing Evolution Gaming" class="project-image">
-                        <h3 class="text-2xl font-semibold text-white mb-4">Evolution: Transformational Gaming</h3>
-                        <p class="text-white mb-4">
+                    <div class="card p-8 bg-EDE9FE">
+                        <img src="https://placehold.co/600x400/EDE9FE/1A202C?text=Evolution+Gaming" alt="Abstract image representing Evolution Gaming" class="project-image">
+                        <h3 class="text-2xl font-semibold text-purple-700 mb-4">Evolution: Transformational Gaming</h3>
+                        <p class="project-card-text mb-4">
                             A platform and movement for transformational gaming that encourages equanimity, healing, and well-being.
                         </p>
-                        <ul class="list-disc list-inside text-white text-sm space-y-1">
+                        <ul class="list-disc list-inside project-card-text text-sm space-y-1">
                             <li><span class="font-medium">Vision:</span> Create wellbeing through gaming, inspiring compassion, connection, creativity, and coherence.</li>
                             <li><span class="font-medium">Methodology:</span> Utilize psychological systems (Enneagram, Spiral Dynamics), biofeedback, and movement for self-awareness and healing.</li>
                             <li><span class="font-medium">Impact:</span> Foster psychological, emotional, and physiological states of health and wellness.</li>
                         </ul>
-                        <a href="https://docs.google.com/presentation/d/1-Your-Evolution-Link-Here" target="_blank" class="text-blue-300 hover:underline text-sm mt-4 block">Discover Evolution</a>
+                        <a href="https://docs.google.com/presentation/d/1-Your-Evolution-Link-Here" target="_blank" class="project-card-link hover:underline text-sm mt-4 block">Discover Evolution</a>
                     </div>
 
                     <!-- Awaken X: Peer-to-Peer Transformation -->
-                    <div class="card p-8 bg-4299E1 text-white">
-                        <img src="https://placehold.co/600x400/4299E1/ffffff?text=Awaken+X" alt="Abstract image representing Awaken X" class="project-image">
-                        <h3 class="text-2xl font-semibold text-white mb-4">Awaken X: Peer-to-Peer Transformation</h3>
-                        <p class="text-white mb-4">
+                    <div class="card p-8 bg-DBEEF9">
+                        <img src="https://placehold.co/600x400/DBEEF9/1A202C?text=Awaken+X" alt="Abstract image representing Awaken X" class="project-image">
+                        <h3 class="text-2xl font-semibold text-purple-700 mb-4">Awaken X: Peer-to-Peer Transformation</h3>
+                        <p class="project-card-text mb-4">
                             A peer-to-peer mentoring and research program designed to foster collective healing and transformation.
                         </p>
-                        <ul class="list-disc list-inside text-white text-sm space-y-1">
+                        <ul class="list-disc list-inside project-card-text text-sm space-y-1">
                             <li><span class="font-medium">Themes:</span> Awaken awareness, acceptance, love, empathy, connection, shadow work, and equanimity.</li>
                             <li><span class="font-medium">Approach:</span> Move from fight/flight/freeze to "tend and befriend" responses through voice, listening, movement, and breath.</li>
                             <li><span class="font-medium">Goal:</span> Systemic positive change and collective psychological growth.</li>
                         </ul>
-                        <a href="https://docs.google.com/document/d/1-Your-AwakenX-Link-Here" target="_blank" class="text-blue-300 hover:underline text-sm mt-4 block">Learn about Awaken X</a>
+                        <a href="https://docs.google.com/document/d/1-Your-AwakenX-Link-Here" target="_blank" class="project-card-link hover:underline text-sm mt-4 block">Learn about Awaken X</a>
                     </div>
 
                     <!-- Intuition Paper: Biological & Social Perspective -->
-                    <div class="card p-8 bg-553C9A text-white">
-                        <img src="https://placehold.co/600x400/553C9A/ffffff?text=Intuition+Research" alt="Abstract image representing Intuition Research" class="project-image">
-                        <h3 class="text-2xl font-semibold text-white mb-4">Intuition: A Biological & Social Perspective</h3>
-                        <p class="text-white mb-4">
+                    <div class="card p-8 bg-F3E8FF">
+                        <img src="https://placehold.co/600x400/F3E8FF/1A202C?text=Intuition+Research" alt="Abstract image representing Intuition Research" class="project-image">
+                        <h3 class="text-2xl font-semibold text-purple-700 mb-4">Intuition: A Biological & Social Perspective</h3>
+                        <p class="project-card-text mb-4">
                             Research exploring the evolution and significance of women's intuition, particularly "attunement."
                         </p>
-                        <ul class="list-disc list-inside text-white text-sm space-y-1">
+                        <ul class="list-disc list-inside project-card-text text-sm space-y-1">
                             <li><span class="font-medium">Hypothesis:</span> Women have greater access to and utilization of intuition due to biological evolution and sociocultural factors.</li>
                             <li><span class="font-medium">Focus:</span> Attunement – the ability to empathetically, mindfully, and somatically connect with oneself and others.</li>
                             <li><span class="font-medium">Implication:</span> Intuition is critical for navigating complex environments and fostering deeper human connections.</li>
                         </ul>
-                        <a href="https://docs.google.com/document/d/1-Your-IntuitionPaper-Link-Here" target="_blank" class="text-blue-300 hover:underline text-sm mt-4 block">Read the Intuition Paper</a>
+                        <a href="https://docs.google.com/document/d/1-Your-IntuitionPaper-Link-Here" target="_blank" class="project-card-link hover:underline text-sm mt-4 block">Read the Intuition Paper</a>
                     </div>
 
                     <!-- Coaching with Shalini -->
-                    <div class="card p-8 bg-2C5282 text-white">
-                        <img src="https://placehold.co/600x400/2C5282/ffffff?text=Coaching+Services" alt="Abstract image representing Coaching Services" class="project-image">
-                        <h3 class="text-2xl font-semibold text-white mb-4">1:1 Career Coaching</h3>
-                        <p class="text-white mb-4">
+                    <div class="card p-8 bg-E0F2F7">
+                        <img src="https://placehold.co/600x400/E0F2F7/1A202C?text=Coaching+Services" alt="Abstract image representing Coaching Services" class="project-image">
+                        <h3 class="text-2xl font-semibold text-purple-700 mb-4">1:1 Career Coaching</h3>
+                        <p class="project-card-text mb-4">
                             Trauma-informed, awareness-based systems change coaching for navigating challenging situations, improving decision-making, and increasing connections.
                         </p>
-                        <ul class="list-disc list-inside text-white text-sm space-y-1">
+                        <ul class="list-disc list-inside project-card-text text-sm space-y-1">
                             <li><span class="font-medium">Program Includes:</span> Safe space for growth, Enneagram assessment, inner practices & healing methodologies.</li>
                             <li><span class="font-medium">Benefits:</span> Self-regulation of stress, awareness of inner resources, career progression.</li>
                             <li><span class="font-medium">Additional Options:</span> Biofield Tuning, Pranic Healing, TRE, Myofascial Release, Intuitive Readings.</li>
                         </ul>
-                        <a href="https://docs.google.com/document/d/1-Your-Coaching-Link-Here" target="_blank" class="text-blue-300 hover:underline text-sm mt-4 block">Explore Coaching Options</a>
+                        <a href="https://docs.google.com/document/d/1-Your-Coaching-Link-Here" target="_blank" class="project-card-link hover:underline text-sm mt-4 block">Explore Coaching Options</a>
                     </div>
 
                 </div>
